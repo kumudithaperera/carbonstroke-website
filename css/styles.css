@@ -32,6 +32,8 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 
+html, body { overflow-x: hidden; }
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -136,6 +138,7 @@ h1, h2, h3, h4 {
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+.mobile-menu[hidden] { display: none; }
 .mobile-menu {
   display: flex;
   flex-direction: column;
@@ -152,8 +155,7 @@ h1, h2, h3, h4 {
 .hero {
   position: relative;
   min-height: 640px;
-  display: flex;
-  align-items: flex-start;
+  display: block;
   overflow: hidden;
   background: var(--cream);
 }
@@ -179,9 +181,10 @@ h1, h2, h3, h4 {
   max-width: 760px;
 }
 .hero-title {
-  font-size: clamp(2.4rem, 5.4vw, 3.9rem);
+  font-size: clamp(2.1rem, 5.4vw, 3.9rem);
   font-weight: 600;
   color: var(--ink);
+  overflow-wrap: break-word;
 }
 .hero-sub {
   margin: 22px auto 0;
@@ -408,6 +411,9 @@ h1, h2, h3, h4 {
   .stat-card { padding: 30px 16px; }
   .hero { min-height: 560px; }
   .hero-content { padding-top: 60px; padding-bottom: 90px; }
+  .hero-title { font-size: 1.85rem; }
+  .hero-title br { display: none; }
+  .hero-actions { gap: 12px; }
   .contact-form { padding: 24px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
