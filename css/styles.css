@@ -288,22 +288,46 @@ h1, h2, h3, h4 {
   gap: 20px;
 }
 .stat-card {
-  background: var(--ink-soft);
-  color: #fff;
+  position: relative;
+  min-height: 168px;
+  perspective: 1200px;
+}
+.stat-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .35s cubic-bezier(.4, .2, .2, 1);
+  transform-style: preserve-3d;
+}
+.stat-card:hover .stat-card-inner,
+.stat-card:focus-within .stat-card-inner { transform: rotateY(180deg); }
+.stat-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
   border-radius: var(--radius);
   padding: 40px 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 6px;
-  transition: transform .22s ease, box-shadow .22s ease;
+  box-shadow: var(--shadow-sm);
 }
-.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.stat-card-front { background: var(--ink-soft); color: #fff; }
+.stat-card-back {
+  background: linear-gradient(150deg, var(--orange), var(--orange-2));
+  color: #fff;
+  transform: rotateY(180deg);
+}
 .stat-num { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 700; line-height: 1; }
 .stat-label { color: #c9c7c4; font-size: .92rem; }
+.stat-card-back .stat-label { color: #fff; }
 
 /* ---------- Portfolio ---------- */
-.work-card { cursor: pointer; }
+.work-card { display: block; cursor: pointer; color: inherit; text-decoration: none; }
+.work-more { text-align: center; margin-top: 40px; }
 .work-thumb {
   height: 168px;
   border-radius: var(--radius);
@@ -312,19 +336,21 @@ h1, h2, h3, h4 {
   transition: transform .25s ease, box-shadow .25s ease;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 .work-card:hover .work-thumb { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .work-thumb::after {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(160deg, rgba(255,255,255,.14), rgba(0,0,0,.18));
+  background: linear-gradient(160deg, rgba(255,255,255,.10), rgba(0,0,0,.22));
 }
-.work-thumb--1 { background: linear-gradient(150deg, #1f2a44, #3a4a6b); }
-.work-thumb--2 { background: linear-gradient(150deg, #6b4a2a, #b9793f); }
-.work-thumb--3 { background: linear-gradient(150deg, #16324f, #2f7fb0); }
-.work-thumb--4 { background: linear-gradient(150deg, #4a2036, #a23f5c); }
-.work-thumb--5 { background: linear-gradient(150deg, #2a2a2a, #55504a); }
-.work-thumb--6 { background: linear-gradient(150deg, #24384a, #4c6b73); }
+.work-thumb--1 { background-image: url("../assets/img/portfolio/corner-store.jpg"); }
+.work-thumb--2 { background-image: url("../assets/img/portfolio/ceylinco-vip.jpg"); }
+.work-thumb--3 { background-image: url("../assets/img/portfolio/eve-case-study.jpg"); }
+.work-thumb--4 { background-image: url("../assets/img/portfolio/eve-design-system.jpg"); }
+.work-thumb--5 { background-image: url("../assets/img/portfolio/tm-theatre-app.jpg"); }
+.work-thumb--6 { background-image: url("../assets/img/portfolio/zen-motors.jpg"); }
 .work-cat { display: block; font-size: .8rem; color: var(--orange-2); font-weight: 600; margin-bottom: 3px; }
 .work-card h3 { font-size: 1.15rem; }
 
@@ -353,6 +379,13 @@ h1, h2, h3, h4 {
   padding: 12px 14px;
   transition: border-color .15s, box-shadow .15s;
   resize: vertical;
+}
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 42px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23787680' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") right 16px center / 13px no-repeat, #fff;
 }
 .field input::placeholder,
 .field textarea::placeholder { color: #a7a49e; }
@@ -408,7 +441,8 @@ h1, h2, h3, h4 {
   .grid-3 { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .stats-grid { gap: 14px; }
-  .stat-card { padding: 30px 16px; }
+  .stat-card { min-height: 140px; }
+  .stat-card-face { padding: 30px 16px; }
   .hero { min-height: 560px; }
   .hero-content { padding-top: 60px; padding-bottom: 90px; }
   .hero-title { font-size: 1.85rem; }
