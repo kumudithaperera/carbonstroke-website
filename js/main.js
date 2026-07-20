@@ -139,15 +139,15 @@
         return;
       }
 
-      var subject = 'New project inquiry — ' + service + (name ? ' (' + name + ')' : '');
-      var bodyLines = [
-        'Name: ' + name,
-        'Email: ' + email,
-        'Service needed: ' + service,
-        '',
-        'Project details:',
-        details || '(none provided)'
-      ];
+      var isGeneral = service === 'General Chat';
+      var who = name ? ' (' + name + ')' : '';
+      var subject = isGeneral
+        ? 'New general inquiry' + who
+        : 'New project inquiry — ' + service + who;
+
+      var bodyLines = ['Name: ' + name, 'Email: ' + email];
+      if (!isGeneral) bodyLines.push('Service needed: ' + service);
+      bodyLines.push('', isGeneral ? 'Message:' : 'Project details:', details || '(none provided)');
       var mailto = 'mailto:' + RECIPIENT +
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(bodyLines.join('\n'));
