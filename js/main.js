@@ -50,6 +50,76 @@
     reveal.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  /* ---- Stat flip counters ---- */
+  var counters = document.querySelectorAll('.stat-num[data-count-to]');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function renderDigits(el, text) {
+    var chars = String(text).split('');
+    var spans = el.querySelectorAll('.stat-digit');
+
+    // Rebuild only when the digit count changes (e.g. 9 -> 10)
+    if (spans.length !== chars.length) {
+      el.textContent = '';
+      chars.forEach(function (ch) {
+        var s = document.createElement('span');
+        s.className = /[0-9]/.test(ch) ? 'stat-digit is-flipping' : 'stat-digit stat-sym';
+        s.textContent = ch;
+        el.appendChild(s);
+      });
+      return;
+    }
+
+    chars.forEach(function (ch, i) {
+      var s = spans[i];
+      if (s.textContent === ch) return;
+      s.textContent = ch;
+      s.classList.remove('is-flipping');
+      void s.offsetWidth; // restart the animation
+      s.classList.add('is-flipping');
+    });
+  }
+
+  function runCounter(el) {
+    var target = parseInt(el.getAttribute('data-count-to'), 10);
+    var suffix = el.getAttribute('data-count-suffix') || '';
+    if (isNaN(target)) return;
+
+    if (reduceMotion) {
+      el.textContent = target + suffix;
+      return;
+    }
+
+    var duration = 1100;
+    var start = null;
+
+    function step(now) {
+      if (start === null) start = now;
+      var p = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
+      renderDigits(el, Math.round(eased * target) + suffix);
+      if (p < 1) requestAnimationFrame(step);
+    }
+
+    renderDigits(el, '0' + suffix);
+    requestAnimationFrame(step);
+  }
+
+  if (counters.length) {
+    if ('IntersectionObserver' in window) {
+      var countObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          countObserver.unobserve(entry.target);
+          runCounter(entry.target);
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (el) { countObserver.observe(el); });
+    } else {
+      counters.forEach(runCounter);
+    }
+  }
+
   /* ---- Contact form -> mailto ---- */
   var form = document.getElementById('contact-form');
   var note = document.getElementById('form-note');
