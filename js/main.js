@@ -125,17 +125,75 @@
   var note = document.getElementById('form-note');
   var RECIPIENT = 'carbonstroke@gmail.com';
 
+  function setNote(message, kind) {
+    if (!note) return;
+    note.textContent = message;
+    note.className = 'form-note' + (kind ? ' is-' + kind : '');
+  }
+
+  // Attaches or clears the message for one field, and keeps the ARIA wiring in
+  // sync so the error is announced when focus lands on the control.
+  function setFieldError(input, message) {
+    var wrap = input.closest('.field');
+    var slot = document.getElementById(input.id + '-error');
+    if (!slot) return;
+
+    if (message) {
+      wrap.classList.add('has-error');
+      input.setAttribute('aria-invalid', 'true');
+      input.setAttribute('aria-describedby', slot.id);
+      slot.textContent = message;
+      slot.hidden = false;
+    } else {
+      wrap.classList.remove('has-error');
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('aria-describedby');
+      slot.textContent = '';
+      slot.hidden = true;
+    }
+  }
+
   if (form) {
+    var nameEl = document.getElementById('name');
+    var emailEl = document.getElementById('email');
+    var serviceEl = document.getElementById('service');
+    var detailsEl = document.getElementById('details');
+
+    // Clear a field's error as soon as the visitor starts fixing it.
+    [nameEl, emailEl].forEach(function (el) {
+      el.addEventListener('input', function () {
+        if (el.hasAttribute('aria-invalid')) setFieldError(el, '');
+      });
+    });
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      var name = form.name.value.trim();
-      var email = form.email.value.trim();
-      var service = form.service.value;
-      var details = form.details.value.trim();
+      var name = nameEl.value.trim();
+      var email = emailEl.value.trim();
+      var service = serviceEl.value;
+      var details = detailsEl.value.trim();
 
-      if (!name || !email) {
-        if (note) note.textContent = 'Please add your name and email so we can reach you.';
+      var nameError = name ? '' : 'Add your name so we know who we’re talking to.';
+      var emailError = '';
+      if (!email) {
+        emailError = 'Add an email address so we can reply.';
+      } else if (!emailEl.checkValidity()) {
+        emailError = 'That email address doesn’t look right — check it for a typo.';
+      }
+
+      setFieldError(nameEl, nameError);
+      setFieldError(emailEl, emailError);
+
+      var firstInvalid = nameError ? nameEl : (emailError ? emailEl : null);
+      if (firstInvalid) {
+        setNote(
+          nameError && emailError
+            ? 'Check the two highlighted fields above.'
+            : 'Check the highlighted field above.',
+          'error'
+        );
+        firstInvalid.focus();
         return;
       }
 
@@ -153,7 +211,7 @@
         '&body=' + encodeURIComponent(bodyLines.join('\n'));
 
       window.location.href = mailto;
-      if (note) note.textContent = 'Opening your email app… if nothing happens, write to ' + RECIPIENT;
+      setNote('Opening your email app… if nothing happens, write to ' + RECIPIENT, 'success');
     });
   }
 })();
