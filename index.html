@@ -3,6 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Security. GitHub Pages cannot send custom HTTP headers, so the policy
+       ships as a meta tag. The sha256 hash below covers the one inline script
+       at the bottom of this head — if that script's bytes change, the hash must
+       be regenerated or the script will silently stop running.
+       frame-ancestors, Permissions-Policy and HSTS are header-only and are set
+       at the Cloudflare edge instead; see docs/security/hardening.md. -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=';
+    style-src 'self' https://fonts.googleapis.com;
+    font-src https://fonts.gstatic.com;
+    img-src 'self' data:;
+    form-action 'none';
+    base-uri 'none';
+    upgrade-insecure-requests;
+  " />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
   <title>CarbonStroke — Your On-Call Partner for Digital Design</title>
   <meta name="description" content="CarbonStroke turns rough ideas into scroll-stopping visuals. From branding to websites and product UI, we build clean, sharp digital experiences that convert." />
 
