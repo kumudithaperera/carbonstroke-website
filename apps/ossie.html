@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Security. GitHub Pages cannot send custom HTTP headers, so the policy
+       ships as a meta tag. The sha256 hash below covers the one inline script
+       at the bottom of this head — if that script's bytes change, the hash must
+       be regenerated or the script will silently stop running.
+       frame-ancestors, Permissions-Policy and HSTS are header-only and are set
+       at the Cloudflare edge instead; see docs/security/hardening.md. -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=';
+    style-src 'self' https://fonts.googleapis.com;
+    font-src https://fonts.gstatic.com;
+    img-src 'self' data:;
+    form-action 'none';
+    base-uri 'none';
+    upgrade-insecure-requests;
+  " />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>Ossie: notes that file themselves | CarbonStroke</title>
+  <meta name="description" content="Ossie is a notes app I’m designing and building on my own. You write or say a note, and the app puts it in the right folder for you, so you don’t have…" />
+
+  <meta property="og:title" content="Ossie: notes that file themselves | CarbonStroke" />
+  <meta property="og:description" content="Ossie is a notes app I’m designing and building on my own. You write or say a note, and the app puts it in the right folder for you, so you don’t have…" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.carbonstroke.com/apps/ossie.html" />
+  <meta property="og:image" content="https://www.carbonstroke.com/assets/img/hero.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/cs-black.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/styles.css?v=5" />
+
+  <!-- Content ships visible; the scroll-reveal animation is opt-in and only
+       applies once we know scripting is available. -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr" id="top">
+  <div class="wrap hdr-in">
+    <a class="brand" href="../" aria-label="CarbonStroke home"><svg viewBox="0 0 196 100" fill="#232323" aria-hidden="true"><path d="M145.737 11.3223L107.428 99.926H195.958V11.3223H145.737Z"/><path d="M105.736 88.749L143.972 0.21875H0.587891V88.749H105.736Z"/></svg>CarbonStroke</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../#studio">Studio</a>
+      <a href="../#work">Work</a>
+      <a href="../#apps" class="new on" aria-current="page">Apps <i class="tag-new">NEW</i></a>
+      <a href="../#about">About</a>
+    </nav>
+    <a class="btn btn-dark btn-sm" href="../#contact">Start a project</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="../#studio">Studio</a>
+    <a href="../#work">Work</a>
+    <a href="../#apps">Apps</a>
+    <a href="../#about">About</a>
+    <a class="btn btn-dark btn-sm" href="../#contact">Start a project</a>
+  </div>
+</header>
+<main id="main" class="case">
+<div class="col top"><a class="back" href="../#apps"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back to apps</a>
+<div class="byline"><span>Nov 9, 2026</span><span>Own app · In development</span></div>
+<h1 class="t">Ossie: notes that file themselves</h1>
+<div class="meta"><div><b>Role</b><span>Solo designer &amp; developer</span></div><div><b>Platforms</b><span>iPhone and Android</span></div><div><b>Status</b><span>In development</span></div></div></div>
+<div class="cover"><img src="../assets/img/work/6iu6V5JmHdPmd7Ue4nTNZz6RQM.png" alt="Ossie cover: a teal file folder labelled Ossie, In development, holding a card that reads Notes that file themselves, with the skeleton mascot carrying folders"></div>
+<div class="col body"><h2>Summary</h2><p>Ossie is a notes app I’m designing and building on my own. You write or say a note, and the app puts it in the right folder for you, so you don’t have to organise anything.</p><ul><li><b>The problem:</b> Notes apps leave the organising to you. Filing takes effort, so notes pile up and get harder to find.</li><li><b>What I did:</b> Designed every screen and built a working app for iPhone and Android. Partway through, I changed direction from an iPhone-only app to one that runs on both.</li><li><b>The result so far:</b> On iPhone, a new note files itself using the AI built into the phone, so notes stay private. If the app isn’t sure, it says so and leaves the note in an Inbox with a suggestion.</li><li><b>Still to do:</b> Ossie isn’t released yet, so there are no usage numbers. Android can’t file notes automatically yet, and accessibility checks on real devices aren’t finished.</li></ul><p><b>Tools:</b> Flutter, Apple Foundation Models on iOS, speech_to_text, local storage. Designed in doop.design.</p><p><b>Status:</b> In development. Not in the App Store or Google Play yet. It will be the latest addition to the apps section here on CarbonStroke.</p><h2>Overview</h2><p>Ossie is a notes app built around one goal: get a thought down and find it later, without having to organise anything. I started it because of the limitations and friction in today’s notes apps, which make keeping notes harder than it should be. You write or speak a note, and the app files it into the right folder for you. You don’t set up folders first, and on iPhone the filing happens on the device, so your notes stay on your phone.</p><p>This case study covers an app that isn’t finished. There are no usage numbers yet, so I judge it against the goals that came out of that friction. It covers how the design changed in doop.design, why the app moved from native iOS to Flutter, and what still doesn’t work.</p><h2>The friction in notes apps</h2><p>Writing a note takes seconds. The work comes after it, because notes apps leave the organising to you. These are the limits that made me want to build a new one:</p><figure><img loading="lazy" src="../assets/img/work/CtM47miQL3tmd41vjyJ7Hsuo.png" alt="Two lists comparing the work for one note. Keeping notes organised by hand: write the note, decide where it belongs, make the folder if it’s missing, move the note there, do it again for the next note. In Ossie: write the note, tap Done, and a banner says Filed to Lisbon with Undo"></figure><ul><li><b>Every note asks where it should go.</b> Filing turns a quick thought into a decision, at the moment you least want to make one.</li><li><b>Folders need building and upkeep.</b> They have to exist before they help, and keeping them tidy takes time away from writing. It’s easy to give up and end up with one long list.</li><li><b>Automatic sorting is hard to trust.</b> If you can’t see where a note went or undo it, you stop believing it’s where you left it.</li><li><b>Voice notes end up somewhere else.</b> A recording often lives apart from your written notes, so you have two places to look.</li><li><b>AI help often means a server.</b> Tools that can sort your notes usually do it by sending them to someone else’s server.</li></ul><p>None of this is about writing. It’s the work around writing, and that’s the work I wanted to remove. For Ossie, ease of use means fewer decisions and less upkeep.</p><h2>Goals</h2><figure><img loading="lazy" src="../assets/img/work/yk2q7RXVrKpJt0jVQ2VFGgCjnA.png" alt="Table with five rows linking each friction to a goal and to what Ossie does: every note asks where it should go, so capture without deciding; folders need building and upkeep, so get structure without setting it up; automatic sorting is hard to trust, so always know where a note went; voice notes end up somewhere else, so keep every note in one place; AI help often means a server, so keep notes on the phone"></figure><p>Each goal comes from one of those frictions, and the goals decide what belongs in the app. If a feature adds a decision while you’re capturing, or setup before your first note, it doesn’t fit.</p><p>The hard question behind all of them: can a phone keep its own folders tidy, using only the AI built into the phone, and be honest enough about its mistakes that you still trust where things are?</p><h2>How it works</h2><figure><img loading="lazy" src="../assets/img/work/yTy9vMU7AnC15FAhZz0VJE2BQLA.png" alt="Three phone screens: writing a note called Flight moved to Friday, Today showing Filed to Lisbon with an Undo banner, and Folders with Lisbon inside Travel"></figure><ul><li><b>Write or talk:</b> a new note opens as a full page, with no folder picker. While you type, a line says where Ossie plans to put it.</li><li><b>Auto-file:</b> when you tap Done, the note goes into a folder and gets tags without asking first. A banner says where it went and offers Undo.</li><li><b>Inbox:</b> if Ossie isn’t sure, the note waits in the Inbox with a best guess. Swipe to accept it, or tap File All.</li><li><b>Activity:</b> a 30-day log lists what was filed, tagged or moved.</li></ul><figure><img loading="lazy" src="../assets/img/work/6TnMmm1Eg0QOk9gBW815VFlSLQ.png" alt="Two phone screens: a live transcript while recording, and the finished voice note filed to Kitchen reno with tags"></figure><p>A voice note isn’t a separate type of item. It’s a normal note with audio and a transcript attached, so it files, tags and searches like any other, and there’s only one place to look.</p><h2>Designing it in Doop</h2><p>All of the screens were designed in doop.design, on one design board that still holds every earlier version. That history is why I can show the changes here. The screens in this case study are copies from that board, with the sample notes rewritten so each image shows one idea.</p><h3>1. All the screens before any app code</h3><p>The first pass covered 19 screens: first run, Today, recording, the editor, the library, the Inbox, Activity, Settings and four empty states. I also mapped where each pose of the app’s mascot would appear.</p><h3>2. Colour and type, compared side by side</h3><figure><img loading="lazy" src="../assets/img/work/xMv3YQbmZMhjhuyzIUkOl0Zamw.png" alt="Five colour themes applied to the same note: Card Catalog, iOS System, Indigo Ink, Sea Glass (chosen) and Monochrome"></figure><p>I tried five colour themes on the same note and checked that the text was easy to read in each one, in light and dark. iOS System looked most like a standard iPhone app, but its blue was too faint on light backgrounds, below the 4.5:1 contrast that accessibility guidelines ask for. Sea Glass won because its teal means both “you can tap this” and “this was filed”, which leaves amber for the Inbox and red for delete.</p><p>I compared five font pairings as well. The recommended option was Apple’s own fonts, New York with SF Pro. I chose Newsreader with Figtree instead, because they look the same on iPhone and Android and give the app a more distinct voice. The cost is extra work: packaging the fonts with the app and making sure they resize properly.</p><h3>3. Checking the design against Apple’s guidelines</h3><p>A second pass rebuilt every screen against Apple’s design guidelines, the Human Interface Guidelines: a floating menu bar at the bottom, buttons big enough to tap easily, and a dark version of each screen.</p><h3>4. Changing the structure</h3><figure><img loading="lazy" src="../assets/img/work/t7BAJn6oSpweiwqyyzXv7yDH6eU.png" alt="The Today screen in three versions: a drawer on Oct 26, a tab bar on Oct 27, and the Notes-style list on Oct 31"></figure><p>The biggest design change came last. The tab bar version was tidy, but it was still a custom app that people had to learn, and that’s friction too. I redesigned it to work like Apple Notes: Folders is the main screen, the app opens on Today, notes sit in simple grouped lists, and the search and new-note buttons sit at the bottom.</p><p>The trade-off was deliberate. iPhone users already know this layout, but filing gets quieter. Where each note went is now a single line under its title, not a large pill. The banner with Undo still appears at the moment of filing.</p><h3>5. From design to working app</h3><p>The 12 final screens became the blueprint for the app, which moved to the new layout on November 4. The code still uses the design file’s screen names, so any screen can be traced back to its design.</p><h2>Changing direction: from iPhone-only to both platforms</h2><figure><img loading="lazy" src="../assets/img/work/h8fA2o6TLqMYrI3L2khpZ5vgRcA.png" alt="Table comparing the first plan with what the app became: Notes became Ossie, iPhone only became iPhone and Android, Apple’s own tools became Flutter with one shared codebase, Apple’s storage became a simple file for now, and Android AI is still open"></figure><p>Ossie started as an iPhone-only app called Notes, built with Apple’s own tools. I switched to Flutter, a tool that builds iPhone and Android apps from the same code, for two reasons: the goals aren’t specific to iPhone, so reaching both made sense, and the animations in the designs, like the filing banner, only have to be built once.</p><p>The visual design carried over unchanged, and the iPhone version still uses Apple’s built-in AI. The switch also had real costs:</p><ul><li><b>Android can’t auto-file yet.</b> I haven’t connected an on-device AI for Android yet, so notes wait in the Inbox with simple suggestions based on their words. Capturing without deciding isn’t true on Android yet.</li><li><b>Storage got simpler, for now.</b> Notes are saved in a basic file today. That has to change to a proper database before people have lots of notes.</li><li><b>Voice has to be proven on real phones.</b> Recording and live transcription now share the microphone, and that needs testing on real devices.</li></ul><h2>Key design decisions</h2><p>Each decision below serves one of the goals, and most of them cost something.</p><h3>1. The AI commits, and you can undo</h3><p class="goal">Goal: capture without deciding.</p><p>Ossie never asks before filing a new note, because a question at the moment of capture is exactly the work the app is meant to remove. Instead, filing is always reversible. Each outcome gets its own banner, and Undo stays up for about 8 seconds.</p><h3>2. Admit uncertainty</h3><p class="goal">Goal: always know where a note went.</p><figure><img loading="lazy" src="../assets/img/work/Ob0ZOwmV3ByEOwv35KHyuZNyv0.png" alt="Today showing filed, In Inbox and Couldn’t file notes, next to the Inbox with best guesses and a swipe action"></figure><p>A wrong folder costs more than no folder, because one misfiled note makes you doubt all of them. So a low-confidence note goes to a visible Inbox with a best guess, and clearing it takes one swipe. If there’s no guess at all, the app says that too.</p><h3>3. A correction is final</h3><p class="goal">Goal: always know where a note went.</p><figure><img loading="lazy" src="../assets/img/work/aDtvMHNoSHe4XwsDJEEJwvw48XM.png" alt="An open note menu saying Folder locked, You moved this note here, so Auto-file won’t move it again, next to the Activity timeline"></figure><p>When you move a note, its folder locks and Auto-file won’t touch it again. The app doesn’t learn from this yet: the correction applies only to that note, which keeps it easy to explain. Activity only records changes. Every correction happens on the note itself, so there is one place to learn.</p><h3>4. On-device first, with an honest fallback</h3><p class="goal">Goal: keep notes on the phone.</p><figure><img loading="lazy" src="../assets/img/work/7mrucmEIrjzwjFU6vGWjuJkK74.png" alt="Settings showing Apple Intelligence on and transcription on device, next to Today with a card saying Auto-filing is off on this phone"></figure><p>Filing uses the AI built into iPhones, Apple’s Foundation Models. That limits how smart it can be, but it means no account, no company server and no notes leaving your phone. On a phone without that AI, a one-time message explains that auto-filing is off, while writing, voice and search keep working.</p><p>For those phones I’ve also decided to let people connect their own AI account, where note content goes only to the provider they choose. That is a written decision, not a built feature.</p><h3>5. Notes stored inside the app, not as separate files</h3><p class="goal">Goal: keep every note in one place.</p><p>Saving each note as a separate file would make notes easy to move and open in other apps. But a note here can carry audio and a transcript as well as text, and search has to work across all of it, so notes and folders are stored inside the app. The cost is that other apps can’t open your notes directly.</p><h2>Reviewing my own work</h2><p>Before going further, I reviewed every screen against WCAG 2.2, the standard accessibility guidelines, and common usability principles. The main finding was uncomfortable: the app promises that notes file themselves, but a confident filing showed no feedback at all. That broke the goal of always knowing where a note went.</p><ul><li><b>6 blockers:</b> serious problems, including a main “Write a note” label too faint to read easily, rows that got cut off at large text sizes, animations that ignored the phone’s Reduce Motion setting, and buttons a keyboard couldn’t reach.</li><li><b>Undo was too short:</b> 5 seconds against the planned 8, which is especially hard for people using a screen reader.</li><li><b>Deleting was final while moving wasn’t:</b> deletes now offer Undo too.</li><li><b>Search overclaimed:</b> the app promised search by meaning, but it only matches words. The wording now says what it does.</li></ul><p>All of these are fixed, apart from two exceptions I kept on purpose. I did the review by reading the code, and the app has since run on an iPhone. It still hasn’t been checked at the largest text size, with a screen reader, or on Android, so I’m not calling it accessible yet.</p><h2>Where it stands against the goals</h2><ul><li><b>Capture without deciding.</b> Works on iPhones with Apple’s built-in AI. On Android, notes still wait in the Inbox for you to file.</li><li><b>Get structure without setting it up.</b> Folders start empty and grow from your first notes on iPhone. It still has to prove itself with a large number of notes.</li><li><b>Always know where a note went.</b> The banner, Inbox, folder locks and Activity log are built. There’s no usage data yet to show that people trust them.</li><li><b>Keep every note in one place.</b> Voice notes already file and search like written ones, but recording still has to be proven on real phones.</li><li><b>Keep notes on the phone.</b> True today: filing runs on the phone, with Apple’s built-in AI on iPhone and simple word-based suggestions on Android.</li></ul><h2>What’s next</h2><ul><li>Check accessibility on real devices: largest text size and screen readers.</li><li>Connect an on-device AI on Android so it can file notes automatically.</li><li>Move notes to a proper database so the app copes with lots of them.</li><li>Build search by meaning, and the option to connect your own AI account.</li><li>Release on the App Store and Google Play.</li></ul><p>Ossie is in development. It’s coming to the apps section here on CarbonStroke.</p></div>
+<div class="col"><a class="next" href="../work/corner-store.html"><div><small>Next case study</small><b>Accessibility design for Corner Store ERP</b></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<div class="more"><h2>More work</h2><a class="row" href="../apps/morsel.html"><div class="th"><img class="fill" src="../assets/img/work/gvOtfZWM7DghjIRNvcex3t6S1V4-512.png" alt="" loading="lazy"></div><span>Morsel: from recipe saver to cooking companion</span><i aria-hidden="true">→</i></a><a class="row" href="../work/corner-store.html"><div class="th"><img class="fill" src="../assets/img/work/s8hvIwSfAadYxRvkldTber7YJU-512.png" alt="" loading="lazy"></div><span>Accessibility design for Corner Store ERP</span><i aria-hidden="true">→</i></a><a class="row" href="../work/eve.html"><div class="th"><img class="fill" src="../assets/img/work/y3qeT4xRrKn5GsXMRyVxWBzTegE-512.png" alt="" loading="lazy"></div><span>Increasing engagement and participation for Eve</span><i aria-hidden="true">→</i></a><a class="row" href="../work/ceylinco-vip.html"><div class="th"><img class="fill" src="../assets/img/work/N4UbVB8gWx2J4PPdl6qsgtL7hmw-512.png" alt="" loading="lazy"></div><span>Reducing confusion when requesting vehicle insurance for Ceylinco VIP</span><i aria-hidden="true">→</i></a><a class="row" href="../work/wave-creations.html"><div class="th dark"><img class="mark" src="../assets/img/work/wave-creations-logo.png" alt="" loading="lazy"></div><span>A logo and letterhead for Wave Creations</span><i aria-hidden="true">→</i></a><a class="row" href="../work/yez-packaging.html"><div class="th light"><img class="mark" src="../assets/img/work/yez-packaging-logo.png" alt="" loading="lazy"></div><span>Logo and brand guidelines for YEZ Packaging</span><i aria-hidden="true">→</i></a></div>
+<div class="back-bottom"><a class="back" href="../#apps"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back to apps</a></div></div>
+</main>
+<footer class="ft" id="about">
+  <div class="wrap">
+    <div class="ft-in">
+      <div>
+        <a class="brand" href="../" aria-label="CarbonStroke home"><svg viewBox="0 0 196 100" fill="#fff" aria-hidden="true"><path d="M145.737 11.3223L107.428 99.926H195.958V11.3223H145.737Z"/><path d="M105.736 88.749L143.972 0.21875H0.587891V88.749H105.736Z"/></svg>CarbonStroke</a>
+        <p class="ft-about">A design studio that also makes apps. Colombo, Sri Lanka.</p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="../#studio">Services</a></li>
+          <li><a href="../#work">Selected work</a></li>
+          <li><a href="https://www.behance.net/kumudithaperera" rel="noopener">Behance</a></li>
+          <li><a href="../#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Apps</h4>
+        <ul>
+          <li><a href="../#apps">All apps</a></li>
+          <li><a href="../apps/morsel.html">Morsel</a></li>
+          <li><a href="../apps/ossie.html">Ossie</a></li>
+          <li><a href="https://morselrecipe.github.io/privacy.html" rel="noopener">Privacy &amp; terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:carbonstroke@gmail.com">carbonstroke@gmail.com</a></li>
+          <li><a href="tel:+94768098182">+94 76 809 8182</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-b"><span>&copy; <span id="year">2026</span> CarbonStroke. All rights reserved.</span><span>carbonstroke.com</span></div>
+  </div>
+</footer>
+
+<script src="../js/main.js?v=4"></script>
+</body>
+</html>

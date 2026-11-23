@@ -1,23 +1,30 @@
 # CarbonStroke Website
 
 Marketing site for **CarbonStroke** — *Your On-Call Partner for Digital Design.*
-A single-page, fully responsive static website built from the approved design.
+A fully responsive static website built from the Doop designs (Landing A and
+the case study frames on the "CarbonStroke website" canvas).
 
 ## Tech
 
 - Plain **HTML / CSS / JavaScript** — no build step, no dependencies.
-- Google Fonts: **Fraunces** (headings) + **Inter** (body).
+- Google Fonts: **Geist** (headings) + **Figtree** (body).
 - Vanilla JS for the mobile menu, scroll-reveal animations, and the contact form.
+- Header and footer markup is repeated in every page; change it in all of them.
 
 ## Structure
 
 ```
 .
-├── index.html            # the whole page
+├── index.html            # homepage: studio, apps, client work, contact
+├── work/                 # client case studies (corner-store, eve, ceylinco-vip,
+│                         #   wave-creations, yez-packaging)
+├── apps/                 # app case studies (morsel, ossie)
 ├── css/styles.css        # all styles (responsive + reduced-motion)
 ├── js/main.js            # menu, scroll reveal, mailto form
 ├── assets/
 │   ├── img/hero.jpg      # optimized hero background
+│   ├── img/apps/         # Morsel and Ossie icons and screens
+│   ├── img/work/         # case study images (served locally; the CSP allows only 'self')
 │   ├── icons/            # service icons
 │   └── logo/             # SVG (black/white) + PNG logo marks
 ├── design-source/        # original PDF design + raw exported assets
@@ -33,13 +40,6 @@ and project details, and opens the visitor's email client.
 
 To switch to a hosted form service later (e.g. Formspree), replace the submit
 handler in `js/main.js`.
-
-## Portfolio images
-
-The six "Our Work" tiles use themed CSS gradients as placeholders (the design's
-project photos weren't part of the asset export). Drop real images into
-`assets/img/portfolio/` and swap the `.work-thumb--n` backgrounds in
-`css/styles.css` when available.
 
 ## Run locally
 
