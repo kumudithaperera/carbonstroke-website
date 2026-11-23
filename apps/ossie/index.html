@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Figtree:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../../css/styles.css?v=6" />
-  <link rel="stylesheet" href="../../css/ossie.css?v=3" />
+  <link rel="stylesheet" href="../../css/ossie.css?v=8" />
 
   <!-- Content ships visible; the scroll-reveal animation is opt-in and only
        applies once we know scripting is available. -->
@@ -67,26 +67,30 @@
 
 <main id="main" class="os">
 
-<!-- ================= HERO ================= -->
-<section class="os-hero">
-  <div class="os-wrap os-hero-in">
-    <div class="os-hero-copy">
-      <div class="os-brand"><img src="../../assets/img/apps/ossie/wave.webp" alt="" width="48" height="56" /><span>Ossie</span></div>
-      <h1>Notes that<br />file themselves.</h1>
-      <p class="os-lead">Write or talk. Ossie reads the note on your phone, puts it in the right folder, and tells you where it went. When it isn’t sure, it asks instead of guessing.</p>
-      <div class="os-acts">
-        <a class="os-btn" href="#waitlist">Join the Waitlist</a>
-        <a class="os-btn secondary" href="#how">See How It Works</a>
-      </div>
-      <div class="os-facts">
-        <span><svg class="os-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Filed on your phone</span>
-        <span><svg class="os-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Voice notes with transcripts</span>
-        <span><svg class="os-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>Undo on every move</span>
-      </div>
-    </div>
+<!-- ================= TOP: app identity, hero, details ================= -->
+<section class="osp-top">
+  <div class="wrap">
+    <a class="back" href="../../#apps"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back to apps</a>
 
-    <div class="os-art" role="img" aria-label="Ossie’s Today screen on a phone, listing notes and the folders they were filed to, next to a new note that says Filed to Lisbon">
-      <div class="os-phone" aria-hidden="true"><div class="os-screen">
+    <div class="osp-hero">
+      <div>
+        <div class="osp-id">
+          <img src="../../assets/img/apps/ossie-icon.webp" alt="" width="64" height="64" />
+          <div><b>Ossie</b><span>Notes app · iPhone &amp; Android</span></div>
+          <span class="osp-dev">In development</span>
+        </div>
+        <h1>Notes that file themselves.</h1>
+        <p class="osp-lead">Write or talk. Ossie reads the note on your phone, puts it in the right folder, and tells you where it went. When it isn’t sure, it asks instead of guessing.</p>
+        <div class="osp-acts">
+          <a class="btn btn-dark" href="mailto:carbonstroke@gmail.com?subject=Add%20me%20to%20the%20Ossie%20waitlist&amp;body=Please%20email%20me%20when%20the%20Ossie%20beta%20opens.">Get notified at launch</a>
+          <a class="btn btn-ghost" href="../ossie.html">Read the case study</a>
+        </div>
+        <p class="osp-agree">Before you sign up, read the <a class="osp-link" href="privacy.html">Privacy Policy</a> and the <a class="osp-link" href="terms.html">Terms of Use</a>.</p>
+      </div>
+
+      <div class="osp-art" role="img" aria-label="Ossie’s Today screen on a phone, listing notes and the folders they were filed to, next to a new note that says Filed to Lisbon">
+        <div class="osp-art-in">
+          <div class="os-phone" aria-hidden="true"><div class="os-screen">
         <div class="os-status"><span>9:41</span><i></i></div>
         <div class="os-back"><svg class="os-ic" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>Folders</div>
         <div class="os-scr-title nr">Today</div>
@@ -106,41 +110,46 @@
           <span class="os-compose"><svg class="os-ic" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
         </div>
       </div></div>
-      <div class="os-ncard" aria-hidden="true">
+          <div class="os-ncard" aria-hidden="true">
         <div class="os-ncard-meta">Just now · typed</div>
         <h3>Flight moved to Friday</h3>
         <p>TAP 1354 now lands at 16:20.</p>
         <span class="os-pill"><svg viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>Filed to Lisbon</span>
       </div>
-      <img class="os-mascot" src="../../assets/img/apps/ossie/folders.webp" alt="" width="171" height="210" />
+        </div>
+        <img class="os-mascot" src="../../assets/img/apps/ossie/folders.webp" alt="" width="155" height="190" />
+      </div>
+    </div>
+
+    <div class="osp-meta">
+      <div><b>Platforms</b><span>iPhone and Android</span></div>
+      <div><b>Status</b><span>In development, beta coming</span></div>
+      <div><b>Your notes</b><span>Stay on your phone</span></div>
+      <div class="legal"><b>Legal</b><span><a class="osp-link" href="privacy.html">Privacy Policy</a><a class="osp-link" href="terms.html">Terms of Use</a></span></div>
     </div>
   </div>
 </section>
 
 <!-- ================= HOW IT WORKS ================= -->
-<section class="os-how" id="how">
-  <div class="os-wrap">
-    <div class="os-intro">
-      <h2 class="os-h2">You write. Ossie does the filing.</h2>
-      <p class="os-lead">Most notes apps hand you a folder tree and wish you luck. Ossie keeps the tree for you, so the only thing you ever do is capture.</p>
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>You write. <em>Ossie does the filing.</em></h2>
+      <p>Most notes apps hand you a folder tree and wish you luck. Ossie keeps the tree for you, so the only thing you do is capture.</p>
     </div>
-    <div class="os-steps">
-      <article class="os-step reveal">
-        <div class="os-step-top"><span class="nr" aria-hidden="true">1</span><img src="../../assets/img/apps/ossie/writing.webp" alt="" width="93" height="120" loading="lazy" /></div>
+    <div class="osp-steps">
+      <article class="osp-step reveal">
+        <div class="osp-step-top"><span class="n">01</span><img src="../../assets/img/apps/ossie/writing.webp" alt="" width="75" height="96" loading="lazy" /></div>
         <h3>Write or talk</h3>
         <p>Open Ossie and you land on Today. Type a note or hold the mic. No folder to choose, no title required. Tap Done.</p>
       </article>
-      <article class="os-step reveal">
-        <div class="os-step-top"><span class="nr" aria-hidden="true">2</span><img src="../../assets/img/apps/ossie/folders.webp" alt="" width="98" height="120" loading="lazy" /></div>
+      <article class="osp-step reveal">
+        <div class="osp-step-top"><span class="n">02</span><img src="../../assets/img/apps/ossie/folders.webp" alt="" width="78" height="96" loading="lazy" /></div>
         <h3>Ossie files it</h3>
         <p>It reads the note, picks a folder, adds a title and a few tags, and makes a new folder when nothing fits.</p>
-        <div class="os-tags">
-          <span class="os-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>Filed to Kitchen reno</span>
-          <span class="os-pill neutral">#quotes</span>
-        </div>
       </article>
-      <article class="os-step reveal">
-        <div class="os-step-top"><span class="nr" aria-hidden="true">3</span><img src="../../assets/img/apps/ossie/thumbs.webp" alt="" width="102" height="120" loading="lazy" /></div>
+      <article class="osp-step reveal">
+        <div class="osp-step-top"><span class="n">03</span><img src="../../assets/img/apps/ossie/thumbs.webp" alt="" width="82" height="96" loading="lazy" /></div>
         <h3>Find it later</h3>
         <p>Browse a tidy folder tree, open a tag, or search from the bottom of any screen. The note is where you’d look for it.</p>
       </article>
@@ -148,12 +157,13 @@
   </div>
 </section>
 
-<!-- ================= INBOX ================= -->
-<section class="os-inbox" id="inbox">
-  <div class="os-wrap os-split">
-    <div class="os-inbox-card reveal" role="img" aria-label="Ossie’s Inbox: a note about pacing waits with three best-guess folders, Work / Product, Ideas and Reading">
-      <div aria-hidden="true">
-        <div class="os-inbox-head"><svg class="os-ic" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>Inbox · 2 notes need a folder</div>
+<!-- ================= FEATURES: Inbox and Voice ================= -->
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="osp-feature">
+      <div class="osp-panel inbox reveal" role="img" aria-label="Ossie’s Inbox: a note about pacing waits with three best-guess folders, Work / Product, Ideas and Reading">
+        <div aria-hidden="true">
+          <div class="os-inbox-head"><svg class="os-ic" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>Inbox · 2 notes need a folder</div>
         <div class="os-note">
           <div class="os-note-meta">9:33 · typed</div>
           <h3>Something Ama said about pacing</h3>
@@ -165,35 +175,34 @@
           <h3>Book the boiler service</h3>
           <p>Swipe right to file to Home, left for more folders.</p>
         </div>
+        </div>
+        <img class="os-mascot" src="../../assets/img/apps/ossie/inbox.webp" alt="" width="139" height="160" loading="lazy" />
       </div>
-      <img class="os-mascot" src="../../assets/img/apps/ossie/inbox.webp" alt="" width="165" height="190" loading="lazy" />
+      <div>
+        <span class="n">The Inbox</span>
+        <h2>Ossie asks instead of guessing.</h2>
+        <p>A note that could belong in three places goes to the Inbox with Ossie’s best guesses. One tap files it. A swipe does too.</p>
+        <ul class="osp-ticks">
+          <li><div><b>Your choice sticks.</b> <span>Move a note yourself and Ossie locks it there.</span></div></li>
+          <li><div><b>Every move has Undo.</b> <span>A banner says where the note went, with Undo right there.</span></div></li>
+          <li><div><b>Nothing happens quietly.</b> <span>Activity lists every automatic change from the last 30 days.</span></div></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h2 class="os-h2">Ossie asks instead of guessing.</h2>
-      <p class="os-lead">A note that could belong in three places goes to the Inbox with Ossie’s best guesses. One tap files it. A swipe does too.</p>
-      <ul class="os-points">
-        <li><span aria-hidden="true"><svg class="os-ic" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><div><b>Your choice sticks.</b> <span class="os-muted">Move a note yourself and Ossie locks it there. It won’t move it again until you say so.</span></div></li>
-        <li><span aria-hidden="true"><svg class="os-ic" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span><div><b>Every move has Undo.</b> <span class="os-muted">A banner tells you where the note went, with Undo right there.</span></div></li>
-        <li><span aria-hidden="true"><svg class="os-ic" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><div><b>Nothing happens quietly.</b> <span class="os-muted">Activity lists every automatic change from the last 30 days.</span></div></li>
-      </ul>
-    </div>
-  </div>
-</section>
 
-<!-- ================= VOICE ================= -->
-<section class="os-voice" id="voice">
-  <div class="os-wrap os-split">
-    <div>
-      <h2 class="os-h2">Talk it through.<br />Read it back.</h2>
-      <p class="os-lead">Hold the mic and say what’s on your mind. Ossie keeps the recording, writes a transcript you can edit, and files the note like any other.</p>
-      <div class="os-stats">
-        <div><div class="nr">On device</div><div>Transcribed on your phone</div></div>
-        <div><div class="nr">Searchable</div><div>Every word, like typed notes</div></div>
+    <div class="osp-feature" id="voice">
+      <div>
+        <span class="n">Voice notes</span>
+        <h2>Talk it through. Read it back.</h2>
+        <p>Hold the mic and say what’s on your mind. Ossie keeps the recording, writes a transcript you can edit, and files the note like any other.</p>
+        <ul class="osp-ticks">
+          <li><div><b>Transcribed on your phone.</b> <span>The audio isn’t sent anywhere to be turned into text.</span></div></li>
+          <li><div><b>Searchable.</b> <span>Every word, the same as a typed note.</span></div></li>
+        </ul>
       </div>
-    </div>
-    <div class="os-voice-art reveal">
-      <div class="os-vcard" role="img" aria-label="A 42-second voice note called Call with Dev about the island, with its transcript, filed to Kitchen reno">
-        <div aria-hidden="true">
+      <div class="osp-panel voice reveal">
+        <div class="os-vcard" role="img" aria-label="A 42-second voice note called Call with Dev about the island, with its transcript, filed to Kitchen reno">
+          <div aria-hidden="true">
           <div class="os-note-meta">Monday 9:12 · voice note</div>
           <h3>Call with Dev about the island</h3>
           <div class="os-player">
@@ -204,75 +213,76 @@
           <div class="os-tr-label">Transcript</div>
           <p>So the sink has to move about forty centimetres left, which means the island loses one drawer stack. Dev thinks we keep the overhang. Ask Harlow if that changes the quote.</p>
           <div class="os-tags"><span class="os-pill">Filed to Kitchen reno</span><span class="os-pill neutral">#island</span></div>
+          </div>
         </div>
+        <img class="os-mascot" src="../../assets/img/apps/ossie/mic.webp" alt="" width="136" height="160" loading="lazy" />
       </div>
-      <img class="os-mascot" src="../../assets/img/apps/ossie/mic.webp" alt="" width="153" height="180" loading="lazy" />
     </div>
   </div>
 </section>
 
 <!-- ================= PRIVACY ================= -->
-<section class="os-privacy" id="privacy">
-  <div class="os-wrap">
-    <div class="os-privacy-head">
-      <div class="os-intro">
-        <h2 class="os-h2">Your notes live on your phone. So does the filing.</h2>
-        <p class="os-lead">There’s no Ossie account and no Ossie server. We never see your notes, because they never leave your device to reach us.</p>
-      </div>
-      <img src="../../assets/img/apps/ossie/unplugged.webp" alt="" width="171" height="200" loading="lazy" />
+<section class="sec osp-privacy" id="privacy">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Your notes live on your phone. <em>So does the filing.</em></h2>
+      <p>There’s no Ossie account and no Ossie server. We never see your notes, because they never leave your device to reach us.</p>
     </div>
-    <div class="os-modes">
-      <div class="os-mode reveal">
+    <div class="osp-modes">
+      <div class="osp-mode reveal">
         <svg class="os-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
         <h3>With Apple Intelligence</h3>
         <p>Filing, titles and tags run on the on-device model. Nothing is sent anywhere.</p>
       </div>
-      <div class="os-mode reveal">
+      <div class="osp-mode reveal">
         <svg class="os-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
         <h3>With your own AI key</h3>
         <p>On other phones, paste a key from Anthropic, OpenAI, Gemini or another provider. Notes go straight from your phone to them, never through us.</p>
       </div>
-      <div class="os-mode reveal">
+      <div class="osp-mode reveal">
         <svg class="os-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
         <h3>With no AI at all</h3>
         <p>Writing, voice, transcripts, search and manual filing all still work. New notes wait in the Inbox with simple suggestions.</p>
       </div>
     </div>
+    <div class="osp-privacy-foot">
+      <img src="../../assets/img/apps/ossie/unplugged.webp" alt="" width="103" height="120" loading="lazy" />
+      <p>The details are in the <a class="osp-link" href="privacy.html">Privacy Policy</a> and the <a class="osp-link" href="terms.html">Terms of Use</a>.</p>
+    </div>
   </div>
 </section>
 
 <!-- ================= FAQ ================= -->
-<section class="os-faq" id="faq">
-  <div class="os-wrap os-faq-in">
-    <div>
-      <h2 class="os-h2">Fair questions.</h2>
-      <p class="os-muted">Something else? Write to us at <a href="mailto:carbonstroke@gmail.com?subject=Question%20about%20Ossie">carbonstroke@gmail.com</a>.</p>
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Fair questions.</h2>
+      <p>Something else? Write to <a class="osp-link" href="mailto:carbonstroke@gmail.com?subject=Question%20about%20Ossie">carbonstroke@gmail.com</a>.</p>
     </div>
-    <div class="os-qs">
+    <div class="osp-qs">
       <div><h3>What if Ossie files a note in the wrong place?</h3><p>Tap Undo on the banner, or move it yourself. A note you move stays put: Ossie locks it to that folder.</p></div>
       <div><h3>Can I make my own folders?</h3><p>Yes. You and Ossie share the same folder tree. Ossie suggests new folders when a topic keeps coming up.</p></div>
       <div><h3>Which phones will it run on?</h3><p>iPhone with iOS 26 and Android. Phones with Apple Intelligence file notes fully on device; others can add an AI key.</p></div>
       <div><h3>Does it need an internet connection?</h3><p>No. Writing, recording, transcribing, searching and on-device filing all work offline.</p></div>
       <div><h3>Who sees my notes?</h3><p>Only you. If you add an AI key, the provider you chose receives the text it needs to file a note. We never do.</p></div>
-      <div><h3>When can I try it?</h3><p>Ossie is in development. Join the waitlist and we’ll send one email when the beta opens.</p></div>
+      <div><h3>When can I try it?</h3><p>Ossie is in development. Ask to be notified and we’ll send one email when the beta opens.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= WAITLIST ================= -->
-<section class="os-wait" id="waitlist">
-  <div class="os-wrap">
-    <div class="os-wait-box">
+<!-- ================= CLOSING CTA ================= -->
+<section class="osp-cta" id="waitlist">
+  <div class="wrap">
+    <div class="osp-cta-box">
       <div>
-        <h2 class="os-h2">Stop filing. Start writing.</h2>
-        <p class="os-lead">Get one email when the Ossie beta opens on iPhone and Android. No newsletter.</p>
-        <div class="os-acts">
-          <a class="os-btn dark" href="mailto:carbonstroke@gmail.com?subject=Add%20me%20to%20the%20Ossie%20waitlist&amp;body=Please%20email%20me%20when%20the%20Ossie%20beta%20opens.">Join the Waitlist</a>
-          <small>Opens your email app with the message ready to send.</small>
-          <small class="os-legal-links"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></small>
+        <h2>Stop filing. Start writing.</h2>
+        <p>Get one email when the Ossie beta opens on iPhone and Android. No newsletter.</p>
+        <div class="osp-acts">
+          <a class="btn btn-dark" href="mailto:carbonstroke@gmail.com?subject=Add%20me%20to%20the%20Ossie%20waitlist&amp;body=Please%20email%20me%20when%20the%20Ossie%20beta%20opens.">Get notified at launch</a>
         </div>
+        <p class="osp-agree">Opens your email app with the message ready to send. See the <a class="osp-link" href="privacy.html">Privacy Policy</a> and <a class="osp-link" href="terms.html">Terms of Use</a>.</p>
       </div>
-      <img src="../../assets/img/apps/ossie/wave.webp" alt="" width="221" height="260" loading="lazy" />
+      <img src="../../assets/img/apps/ossie/wave.webp" alt="" width="204" height="240" loading="lazy" />
     </div>
   </div>
 </section>

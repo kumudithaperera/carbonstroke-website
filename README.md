@@ -19,9 +19,9 @@ the case study frames on the "CarbonStroke website" canvas).
 ├── work/                 # client case studies (corner-store, eve, ceylinco-vip,
 │                         #   wave-creations, yez-packaging)
 ├── apps/                 # app case studies (morsel, ossie) and the Ossie
-│                         #   product page with placeholder legal pages (ossie/)
+│                         #   app page with placeholder legal pages (ossie/)
 ├── css/styles.css        # site styles (responsive + reduced-motion)
-├── css/ossie.css         # Ossie product page styles (Sea Glass theme)
+├── css/ossie.css         # Ossie app page: site layout, Ossie UI mockups
 ├── js/main.js            # menu, scroll reveal, mailto form
 ├── assets/
 │   ├── img/hero.jpg      # optimized hero background
