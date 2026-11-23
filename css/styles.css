@@ -127,7 +127,8 @@ section[id], footer[id] { scroll-margin-top: 24px; }
 .slot { border-radius: 22px; padding: 34px 36px; display: flex; gap: 22px; align-items: flex-start; }
 .slot h4 { font-size: 22px; color: #fff; }
 .slot p { font-size: 14px; color: #a9a39a; margin-top: 6px; }
-.slot-ossie { border: 1px solid rgba(255,255,255,.08); background: #2f2c29; }
+.slot-ossie { position: relative; border: 1px solid rgba(255,255,255,.08); background: #2f2c29; }
+.slot-links a { position: relative; z-index: 2; }
 .slot-ossie > img { width: 64px; height: 64px; border-radius: 16px; flex: none; background: #fff; }
 .slot-ossie .body-col { flex: 1; }
 .slot-title { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
