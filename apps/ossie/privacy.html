@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Security. Same policy as every other page; see docs/security/hardening.md.
+       The sha256 hash covers the one inline script at the bottom of this head.
+       style-src has no 'unsafe-inline', so this page uses no style attributes:
+       every rule lives in css/ossie.css. -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=';
+    style-src 'self' https://fonts.googleapis.com;
+    font-src https://fonts.gstatic.com;
+    img-src 'self' data:;
+    form-action 'none';
+    base-uri 'none';
+    upgrade-insecure-requests;
+  " />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>Ossie Privacy Policy | CarbonStroke</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="The privacy policy for Ossie, a notes app from CarbonStroke. The full policy will be published before Ossie launches." />
+
+  <meta property="og:title" content="Ossie Privacy Policy" />
+  <meta property="og:description" content="The privacy policy for Ossie, a notes app from CarbonStroke. The full policy will be published before Ossie launches." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.carbonstroke.com/apps/ossie/privacy.html" />
+  <meta property="og:image" content="https://www.carbonstroke.com/assets/img/hero.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/logo/cs-black.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Figtree:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../css/styles.css?v=6" />
+  <link rel="stylesheet" href="../../css/ossie.css?v=3" />
+
+  <!-- Content ships visible; the scroll-reveal animation is opt-in and only
+       applies once we know scripting is available. -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr" id="top">
+  <div class="wrap hdr-in">
+    <a class="brand" href="../../" aria-label="CarbonStroke home"><svg viewBox="0 0 196 100" fill="#232323" aria-hidden="true"><path d="M145.737 11.3223L107.428 99.926H195.958V11.3223H145.737Z"/><path d="M105.736 88.749L143.972 0.21875H0.587891V88.749H105.736Z"/></svg>CarbonStroke</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../../#studio">Studio</a>
+      <a href="../../#work">Work</a>
+      <a href="../../#apps" class="new on" aria-current="page">Apps <i class="tag-new">NEW</i></a>
+      <a href="../../#about">About</a>
+    </nav>
+    <a class="btn btn-dark btn-sm" href="../../#contact">Start a project</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="../../#studio">Studio</a>
+    <a href="../../#work">Work</a>
+    <a href="../../#apps">Apps</a>
+    <a href="../../#about">About</a>
+    <a class="btn btn-dark btn-sm" href="../../#contact">Start a project</a>
+  </div>
+</header>
+
+<main id="main" class="os">
+
+<section class="os-legal">
+  <div class="os-wrap">
+    <div class="os-legal-in">
+      <a class="os-eyebrow" href="./">← Back to Ossie</a>
+      <h1>Privacy Policy</h1>
+      <p class="os-lead">Ossie is still in development, so this page is a placeholder. The full privacy policy will be published here before Ossie is released.</p>
+      <div class="os-notice">
+        <svg class="os-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+        <p><b>Placeholder.</b> This is not the final privacy policy and doesn’t yet form an agreement.</p>
+      </div>
+        <h2>What we can say today</h2>
+        <p>These points describe how Ossie is being built. The full policy will cover them in detail.</p>
+        <ul>
+          <li>There’s no Ossie account and no Ossie server. Your notes are stored on your phone.</li>
+          <li>On iPhones with Apple Intelligence, filing, titles and tags run on the device.</li>
+          <li>If you add your own AI key, the provider you choose receives the text it needs to file a note. CarbonStroke never does.</li>
+        </ul>
+      <h2>Questions</h2>
+      <p>Write to <a href="mailto:carbonstroke@gmail.com?subject=Ossie%20Privacy%20Policy">carbonstroke@gmail.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft" id="about">
+  <div class="wrap">
+    <div class="ft-in">
+      <div>
+        <a class="brand" href="../../" aria-label="CarbonStroke home"><svg viewBox="0 0 196 100" fill="#fff" aria-hidden="true"><path d="M145.737 11.3223L107.428 99.926H195.958V11.3223H145.737Z"/><path d="M105.736 88.749L143.972 0.21875H0.587891V88.749H105.736Z"/></svg>CarbonStroke</a>
+        <p class="ft-about">A design studio that also makes apps. Colombo, Sri Lanka.</p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="../../#studio">Services</a></li>
+          <li><a href="../../#work">Selected work</a></li>
+          <li><a href="https://www.behance.net/kumudithaperera" rel="noopener">Behance</a></li>
+          <li><a href="../../#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Apps</h4>
+        <ul>
+          <li><a href="../../#apps">All apps</a></li>
+          <li><a href="../morsel.html">Morsel</a></li>
+          <li><a href="./">Ossie</a></li>
+          <li><a href="https://morselrecipe.github.io/privacy.html" rel="noopener">Privacy &amp; terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:carbonstroke@gmail.com">carbonstroke@gmail.com</a></li>
+          <li><a href="tel:+94768098182">+94 76 809 8182</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-b"><span>&copy; <span id="year">2026</span> CarbonStroke. All rights reserved.</span><span>carbonstroke.com</span></div>
+  </div>
+</footer>
+
+<script src="../../js/main.js?v=4"></script>
+</body>
+</html>
